@@ -1,0 +1,67 @@
+# --------------------------------------
+# 🌐 Frontend - Angular
+# --------------------------------------
+/frontend/node_modules/
+frontend/dist/
+frontend/.angular/cache/
+frontend/.angular/config.json
+
+# Angular environment files (opcional)
+# frontend/src/environments/*.ts
+
+# --------------------------------------
+# ⚙️ Backend - Java (Spring Boot)
+/backend/browser-extension/target/
+/backend/browser-extension/out/
+/backend/browser-extension/.classpath
+/backend/browser-extension/.project
+/backend/browser-extension/.settings/
+/backend/browser-extension/.idea/
+backend/browser-extension/*.iml
+
+# Maven
+/backend/browser-extension/.mvn/
+/backend/browser-extension/mvnw
+/backend/browser-extension/mvnw.cmd
+
+# Gradle (si usas)
+/backend/browser-extension/build/
+/backend/browser-extension/.gradle/
+/backend/browser-extension/gradlew
+/backend/browser-extension/gradlew.bat
+
+# --------------------------------------
+# 💻 IDEs y editores
+# --------------------------------------
+
+# VS Code
+.vscode/
+.history/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# --------------------------------------
+# 💾 Sistema
+# --------------------------------------
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.swp
+*.tmp
+
+# --------------------------------------
+# 🧪 Tests y coverage
+# --------------------------------------
+/coverage/
+/test-output/
+/frontend/coverage/
+/backend/coverage/
