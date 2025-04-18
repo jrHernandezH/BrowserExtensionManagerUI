@@ -1,0 +1,31 @@
+@use '../../../styles/variables' as var;
+
+.content-header {
+    width: clamp(100%, 100%, 1440px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    background: var(--primary);
+    transition: background 0.3s ease-in-out;
+
+    .container-fluid {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .control-theme {
+            appearance: none;
+            border: none;
+
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            background: var(--secondary);
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+
+        }
+    }
+}

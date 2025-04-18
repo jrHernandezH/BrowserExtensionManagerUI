@@ -1,0 +1,8 @@
+<div 
+  class="toastComponent"
+  [class.show]="toastService.isVisible"
+  [class.hide]="!toastService.isVisible && toastService.message"
+  [style.display]="toastService.message ? 'flex' : 'none'"
+>
+  {{ toastService.message }}
+</div>

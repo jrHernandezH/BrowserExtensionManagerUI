@@ -1,0 +1,252 @@
+@use "../../../../styles/variables" as var;
+
+.content-demo {
+    width: 90%;
+    height: 100vh;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 15px 0;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: none;
+    }
+
+    .content-page {
+        width: 100%;
+        margin-top: 20px;
+
+
+        .header-page-demo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            .title {
+                font-size: var.$font-size-title;
+                font-weight: var.$font-weight-bold;
+                color: var(--text-color-primary);
+                transition: all 0.3s ease-in-out;
+                text-transform: capitalize;
+            }
+
+            .filters {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .btn-filter {
+                    border: none;
+                    width: auto;
+                    padding: 5px 10px;
+                    border-radius: 20px;
+                    background-color: var(--filter-color);
+                    color: var(--filter-color-text);
+                    font-size: var.$font-size-small;
+                    font-weight: var.$font-weight-regular;
+                    letter-spacing: .1px;
+                    cursor: pointer;
+                    transition: background 0.3s ease-in-out;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        background-color: var(--hover-background);
+                        color: var(--hover-text-color);
+                    }
+
+                    &.active,
+                    &:active {
+                        background-color: var.$red-500;
+                        color: var(--active-text-color);
+                        outline: none;
+
+                        &:focus-visible {
+                            background: var.$red-700;
+
+
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .demo-plugin-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+
+            .card {
+                background: var(--primary);
+                border-radius: 15px;
+                height: clamp(100px, 150px, 300px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 10px 15px;
+
+                .body-card {
+                    display: flex;
+                    gap: 15px;
+
+                    .description-plugin {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 7px;
+
+                        .name-plugin {
+                            font-size: var.$font-size-paragraph;
+                            font-weight: var.$font-weight-bold;
+                            color: var(--text-color-primary);
+                            transition: all 0.3s ease-in-out;
+                        }
+
+                        .description {
+                            font-size: var.$font-size-xsmall;
+                            font-weight: var.$font-weight-regular;
+                            color: var.$neutral-500;
+                            transition: all 0.3s ease-in-out;
+                            padding-right: 55px;
+                        }
+
+                    }
+                }
+
+                .footer-card {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 10px;
+
+                    .btn-remove {
+                        background: transparent;
+                        outline: 1px solid var.$neutral-500;
+                        border: none;
+                        padding: 5px 10px;
+                        border-radius: 20px;
+                        color: var(--text-color-primary);
+                        transition: all 0.3s ease-in-out;
+                        font-size: var.$font-size-xsmall;
+                        cursor: pointer;
+
+                        &:focus-visible {
+                            outline: 1px solid var.$red-500;
+                        }
+
+                        &:hover {
+                            background: var.$red-500;
+                            color: var(--hover-text-remove);
+                            outline: none;
+                        }
+
+                        &:active {
+                            background: var.$red-700;
+                            color: var(--hover-text-remove);
+                            outline: none;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/*Toggle Switch*/
+/* From Uiverse.io by ClawHack1 */
+/* Genel stil */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    margin: 10px;
+}
+
+/* Giriş stil */
+.toggle-switch .toggle-input {
+    display: none;
+}
+
+/* Anahtarın stilinin etrafındaki etiketin stil */
+.toggle-switch .toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 24px;
+    background-color: var.$neutral-500;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Anahtarın yuvarlak kısmının stil */
+.toggle-switch .toggle-label::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+.toggle-switch .toggle-input:checked+.toggle-label {
+    background-color: var.$red-500;
+}
+
+.toggle-switch .toggle-input:checked+.toggle-label::before {
+    transform: translateX(16px);
+}
+
+/* Light tema */
+.toggle-switch.light .toggle-label {
+    background-color: #BEBEBE;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label {
+    background-color: #9B9B9B;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label::before {
+    transform: translateX(6px);
+}
+
+/* Dark tema */
+.toggle-switch.dark .toggle-label {
+    background-color: #4B4B4B;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label {
+    background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label::before {
+    transform: translateX(16px);
+}
+
+// Responsive styles
+@media (width <=768px) {
+    .content-demo {
+        .content-page {
+            .header-page-demo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+            }
+        }
+    }
+}

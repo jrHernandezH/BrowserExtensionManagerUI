@@ -1,0 +1,40 @@
+<div class="content-demo">
+    <app-header></app-header>
+
+    <div class="content-page">
+        <header class="header-page-demo">
+            <div class="title">
+                {{'Extensions List'}}
+            </div>
+            <div class="filters">
+                <input type="button" value="All" class="btn-filter" (click)="setActiveFilter('All')" [class.active]="filterActive.All">
+                <input type="button" value="Active" class="btn-filter" (click)="setActiveFilter('Active')" [class.active]="filterActive.Active">
+                <input type="button" value="Inactive" class="btn-filter" (click)="setActiveFilter('Inactive')" [class.active]="filterActive.Inactive">
+            </div>
+        </header>
+
+        <section class="demo-plugin-list">
+
+            @for (item of demoApps(); track $index) {
+                <div class="card">
+                    <div class="body-card">
+                        <div class="logo-plugin">
+                            <img [src]="item.logo" [alt]="item.name" class="logo" />
+                        </div>
+                        <div class="description-plugin">
+                            <div class="name-plugin">{{item.name}}</div>
+                            <div class="description">{{item.description}}</div>
+                        </div>
+                    </div>
+                    <div class="footer-card">
+                        <input type="button" value="Remove" class="btn-remove" (click)="removeDemoApp()" />
+                        <div class="toggle-switch">
+                            <input class="toggle-input" [id]="'toggle-' + $index" type="checkbox" [checked]="item.isActive" />
+                            <label class="toggle-label" [for]="'toggle-' + $index"></label>
+                        </div>                    
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>

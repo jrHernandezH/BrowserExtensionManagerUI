@@ -1,0 +1,36 @@
+@use './variables' as var;
+
+:root {
+    --background:#{var.$light-gradient};
+    --primary: #{var.$neutral-0};
+    --secondary: #{var.$neutral-100};
+    --text-color-primary: #{var.$neutral-900};
+    --filter-color: #{var.$neutral-0};
+    --filter-color-text: #{var.$neutral-900};
+    --active-text-color: #{var.$neutral-0};
+    --hover-background: #{var.$neutral-100};
+    --hover-text-color: #{var.$neutral-600};
+    --hover-text-remove: #{var.$neutral-0};
+
+    /*Toast Style*/
+    --toast-background: #{var.$neutral-0};
+    --toast-text: #{var.$neutral-900};
+}
+
+body.dark-theme {
+    --background: #{var.$dark-gradient};
+    --primary: #{var.$neutral-800};
+    --secondary: #{var.$neutral-700};
+    --text-color-primary: #{var.$neutral-200};
+    --filter-color: #{var.$neutral-800};
+    --filter-color-text: #{var.$neutral-300};
+    --active-text-color: #{var.$neutral-900};
+    --hover-background: #{var.$neutral-700};
+    --hover-text-color: #{var.$neutral-100};
+    --hover-text-remove: #{var.$neutral-900};
+
+    --toast-background: #{var.$neutral-600};
+    --toast-text: #{var.$neutral-100};
+
+
+}

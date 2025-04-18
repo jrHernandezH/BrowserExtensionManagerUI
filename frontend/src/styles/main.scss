@@ -1,0 +1,36 @@
+@use './variables' as variables;
+@use './themes' as themes;
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+
+}
+
+body {
+    font-family: variables.$font-family;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* All Inputs or Buttons or any tags have Focus Visible orange because is repeat the code css  */
+
+button,
+input,
+select,
+textarea {
+    user-select: none;
+}
+
+button:not(.active),
+input:not(.active),
+select:not(.active),
+textarea:not(.active) {
+
+    &:focus-visible {
+        outline: variables.$red-400 solid 2px;
+
+    }
+
+}

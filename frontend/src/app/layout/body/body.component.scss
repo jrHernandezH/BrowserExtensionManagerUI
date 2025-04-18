@@ -1,0 +1,15 @@
+@use "../../../styles/main.scss";
+
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+    transition: background 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.theme-transition {
+    transition: background 0.5s ease, color 0.5s ease;
+}
